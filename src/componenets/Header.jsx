@@ -5,8 +5,8 @@ export default function Header() {
     const location= useLocation();
     const navigate= useNavigate();
     // console.log(location.pathname);
-    const path = (route) =>{
-if(route === location.pathname ){
+    function path(Route){
+if(Route === location.pathname ){
     return true;
 }
     }
@@ -17,8 +17,8 @@ if(route === location.pathname ){
                 <img src="https://static.rdc.moveaws.com/images/logos/rdc-logo-default.svg" alt="Ranjan"  className="h-5 cursor-pointer" onClick={()=> navigate("/")}/>
             </div>
             <div>
-                <ul className='flex space-x-10'>
-                    <li className={`cursor-pointer py-6 text-gray-400 text-sm font-semibold border-b-[3px] border-b-transparent ${path("/") && "text-black border-b-red-500"}` } onClick={()=> navigate("/")}>Home</li>
+                <ul className='flex  space-x-10'>
+                    <li className={`cursor-pointer py-6 text-gray-400 text-sm font-semibold  border-b-[3px] border-b-transparent ${path("/") && "text-black border-b-red-500"}` } onClick={()=> navigate("/")}>Home</li>
                     <li className={`cursor-pointer py-6 text-gray-400 text-sm font-semibold border-b-[3px] border-b-transparent ${path("/offers") && "text-black border-b-red-500"}`} onClick={()=> navigate("/offers")}>Offers</li>
                     <li className={`cursor-pointer py-6 text-gray-400 text-sm font-semibold border-b-[3px] border-b-transparent ${path("/sign-in") && "text-black border-b-red-500"}`} onClick={()=> navigate("/sign-in")}>Sign In</li>
                 </ul>
